@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elon Musk: How He Spends His Week in General</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      background-image: url(./elon-musk-background-9e77fcl7zm5cyov4.jpg);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .sell-text {
+      color: #ffddc1;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      max-width: 800px;
+      padding: 20px 30px;
+      background: linear-gradient(135deg, rgba(51, 46, 46, 0.85), rgba(25, 25, 25, 0.85));
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      line-height: 1.6;
+      text-align: center;
+      font-size: 1.2em;
+      display: none; /* Hide all paragraphs initially */
+    }
+
+    /* Show the first paragraph initially */
+    .sell-text:first-of-type {
+      display: block;
+    }
+
+    .button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+    }
+
+    .back-button {
+      left: 20px;
+    }
+
+    .next-button {
+      right: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Back Button -->
+    <img src="./back.png" class="button back-button" onclick="showPreviousText()" alt="Back button">
+
+    <!-- Paragraphs -->
+    <p class="sell-text" id="sell-text-1">Илон Маск, выдающийся генеральный директор Tesla и X (бывший Twitter), раскрывает свой секрет поддержания продуктивности в рамках 120-часовой рабочей недели: строгий и тщательно продуманный распорядок.
+
+      Маск просыпается в 7 утра после шести часов сна и планирует свой день, разбивая его на пятиминутные интервалы. Свою рабочую неделю он организует стратегически, распределяя время между различными компаниями. 
+
+      Известный своей исключительной трудовой этикой, Маск нередко работает более 120 часов в неделю, погружаясь в задачи и проводя в офисе порой несколько дней подряд. Но в чем его секрет? По словам самого Маска, секрет заключается в его распорядке, где каждая минута тщательно спланирована и использована с максимальной пользой.</p>
+    <p class="sell-text" id="sell-text-2">Если вы Илон Маск, то, вероятно, проводите свою неделю, управляя двумя многомиллиардными компаниями, тремя дополнительными проектами, мечтая о Марсе, находя время для встреч с пятью сыновьями и, возможно, романтического ужина. 6 июня на ежегодном собрании акционеров Tesla генеральный директор Tesla и SpaceX уделил немного времени, чтобы рассказать, как проходит его рабочая неделя.
+
+      Распорядок Маска уже много лет вызывает восхищение. Как один человек управляет таким количеством компаний, планируя при этом будущее на Марсе и продвигая достоинства видеоигры Overwatch в X (ранее Twitter)? Quartz проанализировал многолетние интервью и статьи, а также последние комментарии Маска, чтобы составить представление о его недельном расписании</p>
+    <p class="sell-text" id="sell-text-3">Работа, работа и ещё раз работа. Но при этом — достаточно сна.
+
+      Неудивительно, что глава Tesla и SpaceX проводит большую часть времени, управляя своими компаниями. Сообщается, что Маск сократил свою рабочую неделю с изнурительных 100 часов после запуска бизнеса до более умеренных «80–90 часов в неделю». Чтобы поддерживать такой темп, он прибегал к помощи кофеина. На пике, как сообщает Inc., его привычка включала восемь банок диетической колы и несколько больших чашек кофе ежедневно. «Я так перенасытился кофеином, что начал ощущать потерю периферийного зрения», — признаётся Маск. Сейчас он утверждает, что сократил потребление: «Теперь в офисе стоит диетическая кола без кофеина».
+
+      Однако сон оказался необходимостью. Маск обнаружил, что недостаток сна снижает его продуктивность. Вместо того чтобы сокращать его ещё сильнее, он установил режим: подъём около 7 утра и отбой после 1 ночи. «Для меня оптимально — около 6–6,5 часов в сутки», — сказал он в интервью в Музее истории компьютеров в Маунтин-Вью в 2013 году и подтвердил это на недавней сессии AMA на Reddit. «Сон действительно важен. Я заметил, что если не высыпаюсь, становлюсь довольно раздражительным… Можно, конечно, уменьшить количество сна, но тогда, хоть и бодрствуешь больше, сделаешь меньше, потому что это влияет на остроту мышления». По данным Национального фонда сна, такое количество сна находится в «допустимом» диапазоне.</p>
+
+   
+    <img src="./next.png" class="button next-button" onclick="showNextText()" alt="Next button">
+  </div>
+
+  <script>
+    const texts = document.querySelectorAll('.sell-text'); 
+    let currentTextIndex = 0; // 
+
+    function showNextText() {
+      texts[currentTextIndex].style.display = 'none'; 
+      currentTextIndex = (currentTextIndex + 1) % texts.length; 
+      texts[currentTextIndex].style.display = 'block'; 
+    }
+
+    function showPreviousText() {
+      texts[currentTextIndex].style.display = 'none'; 
+      currentTextIndex = (currentTextIndex - 1 + texts.length) % texts.length; 
+      texts[currentTextIndex].style.display = 'block'; 
+    }
+  </script>
+</body>
+</html>

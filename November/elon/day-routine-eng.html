@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elon Musk: How He Spends His Week in General</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      background-image: url(./elon-musk-background-9e77fcl7zm5cyov4.jpg);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .sell-text {
+      color: #ffddc1;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      max-width: 800px;
+      padding: 20px 30px;
+      background: linear-gradient(135deg, rgba(51, 46, 46, 0.85), rgba(25, 25, 25, 0.85));
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      line-height: 1.6;
+      text-align: center;
+      font-size: 1.2em;
+      display: none; /* Hide all paragraphs initially */
+    }
+
+    /* Show the first paragraph initially */
+    .sell-text:first-of-type {
+      display: block;
+    }
+
+    .button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+    }
+
+    .back-button {
+      left: 20px;
+    }
+
+    .next-button {
+      right: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Back Button -->
+    <img src="./back.png" class="button back-button" onclick="showPreviousText()" alt="Back button">
+
+    <!-- Paragraphs -->
+    <p class="sell-text" id="sell-text-1">Elon Musk, the visionary behind Tesla, SpaceX, and other groundbreaking ventures, is known for his relentless drive and innovative mindset. His daily routine is a blend of strict time management, productivity hacks, and unique habits that keep him at the forefront of multiple industries. From his early morning rituals to his late-night work sessions, every part of Musk’s day is meticulously planned to maximize efficiency and creativity. Read on to look at how Elon Musk structures his daily schedule, balances work and personal life, and maintains his productivity across various high-stakes projects.
+
+      Wakeup
+Elon Musk's morning routine sets the tone for his highly productive day. Here's how he starts his day:
+
+Wakeup Time: He wakes up around 7 a.m., ensuring he gets enough sleep to maintain his energy levels.
+Morning Habit: Surprisingly, Musk begins his morning with a doughnut, adding a bit of sweetness to his early hours.
+Preparation: He quickly transitions from waking up to getting ready, minimizing downtime and maximizing productivity.
+For those looking to kickstart their day with an extra boost, a refreshing green powder drink like AG1 or a cup of Yerba Mate can provide essential nutrients and sustained energy. While Musk may start his day differently, these options are popular among many for their ability to enhance focus and productivity.
+
+“I only have 0.4 donuts at a time, because my brain neural network quantizes it down to 0 donuts."
+Elon Musk  </p>
+    <p class="sell-text" id="sell-text-2">Elon Musk's relationship with his phone is an integral part of his daily routine. Despite its necessity, he's trying to change this habit.
+
+      Morning Check: As soon as Musk wakes up, he immediately checks his phone for any emergencies, a habit he's found hard to break.
+      Emergency Alerts: Given his roles at Tesla, SpaceX, SolarCity, Neuralink, Boring Company, Hyperloop, and other ventures, he prioritizes staying updated on any critical issues that might need his immediate attention.
+      Habit Change: He has described this routine of checking his phone first thing in the morning as a terrible habit he's hoping to escape.
+      Eye Protection: For those who, like Musk, use electronic gadgets early in the morning, it’s recommended to wear blue light blocking glasses to reduce potential eye strain and prevent long-term damage to eyesight caused by prolonged exposure to screens.
+      Balancing the necessity of staying informed with the desire to reduce screen time is a challenge even for someone as disciplined as him. His efforts to change this habit reflect his commitment to refining his daily schedule for better efficiency and work-life balance.
+      
+      “Some days I wake up and look at X to see if it's still working."
+      Elon Musk  </p>
+    <p class="sell-text" id="sell-text-3">Shower
+      Taking a shower is a key part of Elon Musk's daily routine, helping him prepare for the day ahead.
+      
+      Refreshing Start: After checking his phone, he takes a shower to refresh himself and get into the right headspace.
+      Positive Effect: He credits showering with having the biggest positive effect on his daily life.
+      Mental Preparation: He has mentioned that he doesn’t feel ready to face the challenges of the day without his shower.
+      Daily Habit: This simple routine helps him wake up fully and prepares him to tackle his busy schedule.
+      Cold Plunge Alternative: If you're looking for an extra jolt of energy in the morning, a cold plunge using a cold pod is an excellent alternative to a standard shower. Cold plunges are known to boost energy, enhance focus, and improve circulation, making it an excellent start to any day.
+      This essential part of his morning routine helps him maintain his productivity and ensures he starts his day feeling fresh and focused. This habit is a critical component of his overall success strategy.  
+      Business Dinner
+      He often uses business dinners as an opportunity to satisfy his hunger while discussing work-related matters.
+      
+      Satisfying Hunger: He admits to eating too much during business dinners, making it a significant part of his evening routine.
+      Favorite Drinks: He has a particular affection for Diet Coke and enjoys whiskey or wine.
+      Cuisine Preferences: When it comes to food, Musk enjoys sushi, French cuisine and barbeque.
+      Work Integration: These dinners often serve a dual purpose, allowing him to continue his work discussions while enjoying a meal.
+      
+    
+    </p>
+
+    <!-- Next Button -->
+    <img src="./next.png" class="button next-button" onclick="showNextText()" alt="Next button">
+  </div>
+
+  <script>
+    const texts = document.querySelectorAll('.sell-text'); // Array of paragraph elements
+    let currentTextIndex = 0; // Track the current paragraph index
+
+    function showNextText() {
+      texts[currentTextIndex].style.display = 'none'; // Hide current paragraph
+      currentTextIndex = (currentTextIndex + 1) % texts.length; // Move to the next paragraph, wrapping around
+      texts[currentTextIndex].style.display = 'block'; // Show the next paragraph
+    }
+
+    function showPreviousText() {
+      texts[currentTextIndex].style.display = 'none'; // Hide current paragraph
+      currentTextIndex = (currentTextIndex - 1 + texts.length) % texts.length; // Move to the previous paragraph, wrapping around
+      texts[currentTextIndex].style.display = 'block'; // Show the previous paragraph
+    }
+  </script>
+</body>
+</html>

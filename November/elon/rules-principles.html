@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elon Musk: How He Spends His Week in General</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      background-image: url(./elon-musk-background-9e77fcl7zm5cyov4.jpg);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .sell-text {
+      color: #ffddc1;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      max-width: 800px;
+      padding: 20px 30px;
+      background: linear-gradient(135deg, rgba(51, 46, 46, 0.85), rgba(25, 25, 25, 0.85));
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      line-height: 1.6;
+      text-align: center;
+      font-size: 1.2em;
+      display: none; /* Hide all paragraphs initially */
+    }
+
+    /* Show the first paragraph initially */
+    .sell-text:first-of-type {
+      display: block;
+    }
+
+    .button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+    }
+
+    .back-button {
+      left: 20px;
+    }
+
+    .next-button {
+      right: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Back Button -->
+    <img src="./back.png" class="button back-button" onclick="showPreviousText()" alt="Back button">
+
+    <!-- Paragraphs -->
+    <p class="sell-text" id="sell-text-1">Мечтайте масштабно и работайте неустанно. Компании Маска, такие как Tesla, SpaceX и The Boring Company, отражают его стремление браться за крупные, рискованные проекты. Он убежден в важности расширения границ возможного и безостановочной работы для воплощения своих амбициозных идей.
+
+      Принимайте неудачи как путь к успеху. Маск рассматривает неудачи как необходимую часть роста и инноваций. Его компании не раз сталкивались с трудностями, но он подчеркивает, что важно учиться на ошибках и быстро двигаться вперед.</p>
+    <p class="sell-text" id="sell-text-2">Сосредоточьтесь на решении проблем. Маск отдает приоритет поиску эффективных решений для реальных задач. Он призывает использовать основы физики и инженерии для создания передовых технологий.
+
+      Не боясь бросать вызов традиционным индустриям, Маск трансформировал такие сферы, как транспорт и космическая отрасль. Его история показывает силу в том, чтобы оспаривать нормы и следовать новаторским идеям.</p>
+    <p class="sell-text" id="sell-text-3">Развивайте стойкость и гибкость. Путь Маска был непростым — он сталкивался с финансовыми трудностями, публичной критикой и личными жертвами. Вы должны быть ментально стойкими также уметь высокий уровень выдержки стресса.
+
+      Эти правила и уроки из карьеры Маска дают основу тем, кто стремится к инновациям, готов рисковать и хочет оставить долгосрочный след.</p>
+
+    <!-- Next Button -->
+    <img src="./next.png" class="button next-button" onclick="showNextText()" alt="Next button">
+  </div>
+
+  <script>
+    const texts = document.querySelectorAll('.sell-text'); // Array of paragraph elements
+    let currentTextIndex = 0; // Track the current paragraph index
+
+    function showNextText() {
+      texts[currentTextIndex].style.display = 'none'; // Hide current paragraph
+      currentTextIndex = (currentTextIndex + 1) % texts.length; // Move to the next paragraph, wrapping around
+      texts[currentTextIndex].style.display = 'block'; // Show the next paragraph
+    }
+
+    function showPreviousText() {
+      texts[currentTextIndex].style.display = 'none'; // Hide current paragraph
+      currentTextIndex = (currentTextIndex - 1 + texts.length) % texts.length; // Move to the previous paragraph, wrapping around
+      texts[currentTextIndex].style.display = 'block'; // Show the previous paragraph
+    }
+  </script>
+</body>
+</html>

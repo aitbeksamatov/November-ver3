@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title> Benedict Cumberbatch page</title>
+</head>
+<body>
+
+
+  <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+    
+
+
+    *{
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', 'sans-serif';
+      box-sizing: border-box;
+    }
+
+    .container{
+      width: 100%;
+      height: 100vh;
+      background-image: url(./images/bill/208092-1920x1080-desktop-full-hd-bill-gates-background-photo.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    #menuIcon{
+      width: 60px;
+      border-radius: 50%;
+      position: fixed;
+      top: 40px;
+      right: 60px;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .menu-box{
+      width: 0;
+      height: 0;
+      background: rgba(0, 0, 0, 0.8);
+      position: fixed;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+ 
+      border-bottom-left-radius: 100%;
+      transition: width 0.5s, height 0.5s, border-radius 0.5s ;
+    }
+
+    .menu-box.open-menu{
+      width: 100%;
+      height: 100vh;
+      border-bottom-left-radius: 0;
+    }
+
+    .menu-box.open-menu ul li{
+      opacity: 1;
+      transform: translateY(0);
+      transition: transform 1s, opacity 1s;
+      transition-delay: 0.5s;
+    }
+
+    .menu-box ul li{
+      list-style: none;
+      margin: 20px;
+      text-align: center;
+
+      opacity: 0;
+      transform: translateY(30px );
+    }
+
+    .menu-box ul li a{
+      display: inline-block;
+      
+      color: #fff;
+      font-size: 50px;
+      font-weight: 600;
+      position: relative;
+      text-shadow: 0 0 0 red;
+	    text-decoration: none;
+	    transition: .25s ease;
+    }
+
+    &:hover {
+		a {
+			color: #CCC;
+			&:hover {
+				color: #f6cccc;
+				box-shadow: 0 2px 0 0 currentcolor;
+        font-size: 53px;
+        transform: translateY(-6px);
+			}
+		}
+	}
+
+
+    
+  </style>
+  
+
+
+  <div class="container">
+
+  </div>
+
+  <img src="./images/bill/menu.png" id="menuIcon">
+
+  <div class="menu-box" id="menuBox">
+    <ul>
+      <li><a href="#">распорядок недели</a></li>
+      <li><a href="#">методы планирования</a></li>
+      <li><a href="#">личная жизнь</a></li>
+      <li><a href="#">жизненные принципы и правила</a></li>
+      <li><a href="#">распорядок дня</a></li>
+      <li><a href="#">особенности личности</a></li>
+      <li><a href="#">характер</a></li>
+    </ul>
+  </div>
+
+
+
+
+  <script>
+    let menuBox = document.getElementById("menuBox");
+    let menuIcon = document.getElementById("menuIcon");
+
+
+    menuIcon.onclick = function(){
+      menuBox.classList.toggle("open-menu");
+      
+      if(menuBox.classList.contains("open-menu")){
+        menuIcon.src = "./images/bill/close.png";
+      } else{
+        menuIcon.src = "./images/bill/menu.png";
+      }
+    }
+  </script>
+</body>
+</html>

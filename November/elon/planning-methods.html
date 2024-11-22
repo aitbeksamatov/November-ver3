@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elon Musk: his planning Methods</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      background-image: url(./elon-musk-background-9e77fcl7zm5cyov4.jpg);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .sell-text {
+      color: #ffddc1;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      max-width: 800px;
+      padding: 20px 30px;
+      background: linear-gradient(135deg, rgba(51, 46, 46, 0.85), rgba(25, 25, 25, 0.85));
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      line-height: 1.6;
+      text-align: center;
+      font-size: 1.2em;
+      display: none; /* Hide all paragraphs initially */
+    }
+
+    /* Show the first paragraph initially */
+    .sell-text:first-of-type {
+      display: block;
+    }
+
+    .button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+    }
+
+    .back-button {
+      left: 20px;
+    }
+
+    .next-button {
+      right: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Back Button -->
+    <img src="./back.png" class="button back-button" onclick="showPreviousText()" alt="Back button">
+
+    <!-- Paragraphs -->
+    <p class="sell-text" id="sell-text-1">Расстановка приоритетов
+      Звучит банально, но в рабочем процессе главное — расставить приоритеты и вычленить из общего пула задач первостепенные, разделив всю входящую информацию на «сигнал» и «шум». Своим главным задачам — разработке продукта и инженерным решениям — Илон Маск посвящает 80% рабочего времени и только 20% оставляет для взаимодействия с медиа- и бизнес-партнерами и административных задач. Конечно, ваша работа может предполагать иной расклад, но суть остается неизменной: выбирайте основное направление работы и не распыляйтесь.
+
+      Пятиминутные блоки
+А вот и непосредственная техника, которая поможет сосредоточиться на главном: весь день Маска расписан с точностью до пяти минут. Буквально: изобретатель разделяет время на пятиминутные блоки и резервирует каждый под определенную задачу. Возможно, под некоторые дела понадобится выделить более чем один блок — например, вряд ли у вас получится нормально пообедать за пять минут, а ведь обед, душ и другие «нерабочие» рутинные дела тоже необходимо включить в план. Постарайтесь придерживаться своего плана, но не корите себя слишком сильно, если получится не с первого раза: так, редактор издания Entrepreneur Хейден Филд, которая опробовала метод Маска, рассказала, что столкнулась со стрессом из-за того, что не удавалось уложиться в пять минут с некоторыми важными делами.</p>
+    <p class="sell-text" id="sell-text-2">«Пакетирование» дел
+      Вместе с планированием дня по пятиминуткам Илон Маск применяет технику «пакетирования» (batching): группирует вместе задачи, которые можно решать одновременно. Отвечать на письма за завтраком, надиктовать возможные идеи проекта по дороге на работу — многозадачность тоже можно спланировать и натренировать.
+
+      Быстрый подход к целям
+Первый закон Паркинсона гласит: «Работа заполняет время, отпущенное на нее». Работает он и в обратную сторону: если на конкретную работу выделить короткий временной промежуток, то, возможно, удастся решить ее быстро и сэкономить время для следующих дел. Именно поэтому Илон Маск старается решать важные задачи в максимально сжатые сроки (мы же помним про пятиминутки). Не всякое дело можно взять рекордным наскоком, но попробуйте при планировании отвести на него чуть меньше времени, чем собирались изначально: четкие интервалы позволят мобилизоваться.</p>
+    <p class="sell-text" id="sell-text-3">Сокращение встреч
+      Чего Илон Маск не любит, так это длинные рабочие встречи, поэтому старается их сокращать. Например, избегайте встреч с большим количеством участников, если вы не уверены на сто процентов в их эффективности. Если такой встречи не удастся избежать, постарайтесь сократить время вашего присутствия. Рабочие встречи также не должны быть частыми: большинство вопросов, кроме самых срочных, можно решить в переписке, а личные встречи необходимы только при первом обсуждении проекта и при возникновении неотложных вопросов и проблем. Наконец, со встречи можно попросту уйти, если вы чувствуете, что не добавляете встрече ценности: «Уходить не грубо, грубо — заставлять кого-то оставаться и тратить свое время», — считает Илон.</p>
+
+    <!-- Next Button -->
+    <img src="./next.png" class="button next-button" onclick="showNextText()" alt="Next button">
+  </div>
+
+  <script>
+    const texts = document.querySelectorAll('.sell-text'); // Array of paragraph elements
+    let currentTextIndex = 0; // Track the current paragraph index
+
+    function showNextText() {
+      texts[currentTextIndex].style.display = 'none'; // Hide current paragraph
+      currentTextIndex = (currentTextIndex + 1) % texts.length; // Move to the next paragraph, wrapping around
+      texts[currentTextIndex].style.display = 'block'; // Show the next paragraph
+    }
+
+    function showPreviousText() {
+      texts[currentTextIndex].style.display = 'none'; // Hide current paragraph
+      currentTextIndex = (currentTextIndex - 1 + texts.length) % texts.length; // Move to the previous paragraph, wrapping around
+      texts[currentTextIndex].style.display = 'block'; // Show the previous paragraph
+    }
+  </script>
+</body>
+</html>

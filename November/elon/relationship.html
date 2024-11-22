@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elon Musk: How He Spends His Week in General</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      background-image: url(./elon-musk-background-9e77fcl7zm5cyov4.jpg);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .sell-text {
+      color: #ffddc1;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      max-width: 800px;
+      padding: 20px 30px;
+      background: linear-gradient(135deg, rgba(51, 46, 46, 0.85), rgba(25, 25, 25, 0.85));
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      line-height: 1.6;
+      text-align: center;
+      font-size: 1.2em;
+      display: none; /* Hide all paragraphs initially */
+    }
+
+    /* Show the first paragraph initially */
+    .sell-text:first-of-type {
+      display: block;
+    }
+
+    .button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+    }
+
+    .back-button {
+      left: 20px;
+    }
+
+    .next-button {
+      right: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Back Button -->
+    <img src="./back.png" class="button back-button" onclick="showPreviousText()" alt="Back button">
+
+    <!-- Paragraphs -->
+    <p class="sell-text" id="sell-text-1">Илон Маск был женат трижды и состоял в отношениях с несколькими другими женщинами, среди которых: Justine Wilson, Talulah Riley, Grimes, 
+      Amber Heard, Shivon Zilis. В серии интервью для журнала Rolling Stone журналист начинает разговор с Илоном Маском, спрашивая его о прошлых отношениях. Сначала Илон замечает, что ему может потребоваться время, чтобы настроиться на разговор. Затем он тяжело вздыхает, и его сдержанность ослабевает. «Я только что расстался с девушкой», — говорит он неуверенно. «Я был сильно влюблен, и это очень больно». Он делает паузу, поправляя себя: «Хотя, наверное, правильнее сказать, что это она рассталась со мной. И это стало неожиданно болезненным».
+
+      Маск говорит, что последние недели были наполнены сильной эмоциональной болью. «Требовалась вся моя сила воли, чтобы провести презентацию Model 3 и не казаться самым подавленным человеком в комнате». Он еще несколько минут обсуждает свое расставание, а потом вдруг искренне спрашивает: «Как вы думаете, может, кто-то знает, с кем бы мне стоило познакомиться? Мне так сложно знакомиться с людьми». Он сглатывает и, запинаясь, добавляет: «Я ищу серьезные отношения, не просто мимолетную связь. Я хочу найти спутника жизни, родственную душу. Если я не влюблен, если у меня нет постоянного партнера, я просто не могу быть счастлив. Я никогда не буду счастлив, если буду один».
+    
+    
+    </p>
+    <p class="sell-text" id="sell-text-2">Потом он качает головой, вспоминая: «Я знаю, что значит быть одному в большом пустом доме, где шаги эхом отдаются по пустым коридорам. Никого рядом, ни одной живой души. Как можно быть счастливым в такой ситуации? В детстве я знал одно: я никогда не хотел быть один». Он говорит это с жесткостью, но в его глазах видно блеск, а губы чуть подрагивают от наплыва эмоций. «Я не хочу быть один», — понижая голос до шепота, добавляет он.</p>
+    <p class="sell-text" id="sell-text-3">Когда разговор заходит о его тяжелом графике работы, Маск замечает: «На самом деле, никто не должен работать столько часов — это нехорошо. Люди не должны трудиться так усердно, как я». С горькой улыбкой он добавляет: «Это очень тяжело. Это больно. Молодые люди по всему миру хотят быть как Илон Маск, но я бы посоветовал им об этом не мечтать. Думаю, это звучит лучше, чем есть на самом деле. Быть мной — не такое уж веселье, как может показаться».</p>
+
+    <!-- Next Button -->
+    <img src="./next.png" class="button next-button" onclick="showNextText()" alt="Next button">
+  </div>
+
+  <script>
+    const texts = document.querySelectorAll('.sell-text'); // Array of paragraph elements
+    let currentTextIndex = 0; // Track the current paragraph index
+
+    function showNextText() {
+      texts[currentTextIndex].style.display = 'none'; // Hide current paragraph
+      currentTextIndex = (currentTextIndex + 1) % texts.length; // Move to the next paragraph, wrapping around
+      texts[currentTextIndex].style.display = 'block'; // Show the next paragraph
+    }
+
+    function showPreviousText() {
+      texts[currentTextIndex].style.display = 'none'; // Hide current paragraph
+      currentTextIndex = (currentTextIndex - 1 + texts.length) % texts.length; // Move to the previous paragraph, wrapping around
+      texts[currentTextIndex].style.display = 'block'; // Show the previous paragraph
+    }
+  </script>
+</body>
+</html>

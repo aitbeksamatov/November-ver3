@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <style>
+    /* Reset and Base Styles */
+    .gallery, .gallery-wrap {
+      display: flex;
+      width: 100%;
+    }
+    #sell-text, h3 {
+      color: #ffddc1;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Poppins, sans-serif;
+      box-sizing: border-box;
+    }
+    body {
+      background: #191919;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #fff;
+    }
+    h3 {
+      font-size: 34px;
+      margin: 30px 0;
+      text-align: center;
+    }
+    .gallery-wrap {
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      max-width: 960px;
+      overflow: hidden;
+    }
+    .gallery {
+      gap: 20px;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+    }
+    .gallery img {
+      width: 180px;
+      height: 150px;
+      border-radius: 10px;
+      transition: transform 0.5s, filter 0.3s;
+      filter: grayscale(100%);
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      filter: grayscale(0%);
+      transform: scale(1.1);
+    }
+    #backBtn, #nextBtn {
+      width: 50px;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    #backBtn:hover, #nextBtn:hover {
+      opacity: 1;
+    }
+    #sell-text {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin: 60px auto;
+      padding: 20px 30px;
+      max-width: 800px;
+      background: linear-gradient(135deg, #332e2e, #191919);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      line-height: 1.6;
+      text-align: center;
+      font-size: 1.1em;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      h3 {
+        font-size: 28px;
+      }
+      .gallery img {
+        width: 150px;
+        height: 120px;
+      }
+      .gallery {
+        gap: 10px;
+      }
+      #sell-text {
+        font-size: 1em;
+        padding: 15px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h3 {
+        font-size: 24px;
+      }
+      .gallery img {
+        width: 120px;
+        height: 100px;
+      }
+      #sell-text {
+        font-size: 0.9em;
+        padding: 10px 15px;
+      }
+      .gallery-wrap {
+        gap: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h3>Выберите про кого хотите узнать</h3>
+
+  <div class="gallery-wrap">
+    <img src="./images/back.png" id="backBtn" alt="Previous" loading="lazy">
+    <div class="gallery" id="gallery">
+      <!-- Group 1 -->
+      <a href="./elon-musk.html"><img src="./images/GettyImages-2158237831.webp" loading="lazy"></a>
+      <a href="./ben.html"><img src="./images/benedict-cumberbatch.jpg" loading="lazy"></a>
+      <a href="./anna.html"><img src="./images/GettyImages-1139359898.avif" alt="Image 3" loading="lazy"></a>
+      <!-- Group 2 -->
+      <a href="./joe.html"><img src="./images/IMG_1874-copy-1.jpg" loading="lazy"></a>
+      <a href="./rock.html"><img src="./images/therock_RGB_Eva-Rinaldi-768x990.png" loading="lazy"></a>
+      <a href="./tom.html"><img src="./images/tom-cruise-1-4f4f749997ae43b9acda4fee266e88df.jpg" loading="lazy"></a>
+      <!-- Additional Images (Group 3) -->
+      <a href="./obama.html"><img src="./images/7.jpg" alt="Image 7" loading="lazy"></a>
+      <a href="./billie.html"><img src="./images/8.webp" alt="Image 8" loading="lazy"></a>
+      <a href="./dua.html"><img src="./images/9.webp" alt="Image 9" loading="lazy"></a>
+      <!-- Additional Images (Group 4) -->
+      <a href="./margulan.html"><img src="./images/10.jpg" loading="lazy"></a>
+      <a href="./skrypronit.html"><img src="./images/11.jpg" loading="lazy"></a>
+      <a href="./bill.html"><img src="./images/12.jpg" alt="Image 12" loading="lazy"></a>
+    </div>
+    <img src="./images/next.png" id="nextBtn" alt="Next" loading="lazy">
+  </div>
+
+  <p id="sell-text">
+    Хотите быстрее раскрывать свой потенциал и добиваться высокой продуктивности? Ключ к успеху — в эффективных методах, лучших инструментах и продуманном тайм-менеджменте. Научитесь создавать результативные краткосрочные и долгосрочные планы, черпая вдохновение у успешных людей. Узнайте, как они планируют, организуют своё время и какие привычки помогают им достигать целей. Выберите личность, которая вас вдохновляет, и откройте для себя её/его стратегии и секреты планирования на пути к вершинам.
+  </p>
+
+  <script>
+    const gallery = document.getElementById('gallery');
+    const nextBtn = document.getElementById('nextBtn');
+    const backBtn = document.getElementById('backBtn');
+
+    const scrollAmount = 600; 
+
+    nextBtn.addEventListener('click', () => {
+      gallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    backBtn.addEventListener('click', () => {
+      gallery.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
